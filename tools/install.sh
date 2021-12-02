@@ -207,7 +207,8 @@ setup_ohmyzsh() {
   git clone \
     -c oh-my-zsh.remote=origin \
     -c oh-my-zsh.branch="$BRANCH" \
-    --depth=1 --branch "$BRANCH" "$REMOTE" "$ZSH" || {
+		--recursive \
+    --branch "$BRANCH" "$REMOTE" "$ZSH" || {
     fmt_error "git clone of oh-my-zsh repo failed"
     exit 1
   }
