@@ -204,10 +204,7 @@ setup_ohmyzsh() {
     exit 1
   fi
 
-  git clone -c core.eol=lf -c core.autocrlf=false \
-    -c fsck.zeroPaddedFilemode=ignore \
-    -c fetch.fsck.zeroPaddedFilemode=ignore \
-    -c receive.fsck.zeroPaddedFilemode=ignore \
+  git clone \
     -c oh-my-zsh.remote=origin \
     -c oh-my-zsh.branch="$BRANCH" \
     --depth=1 --branch "$BRANCH" "$REMOTE" "$ZSH" || {
